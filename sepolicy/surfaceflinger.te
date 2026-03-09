@@ -6,3 +6,7 @@ allow surfaceflinger proc_chip_hwcode:file r_file_perms;
 allow surfaceflinger cmdq_device:chr_file r_file_perms;
 
 allow surfaceflinger pq_service:service_manager find;
+
+
+#allow surfaceflinger debug_prop:property_service set;
+#allow surfaceflinger default_prop:property_service set;

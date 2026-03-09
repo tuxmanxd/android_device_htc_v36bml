@@ -1,5 +1,4 @@
 LOCAL_PATH := device/htc/htc_v36bml_dugl
-
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
@@ -16,7 +15,8 @@ PRODUCT_PACKAGES += \
     libmtkshim_camera \
     libmtkshim_gps \
     libhtcxlog_shim \
-    libmtkshim_atomic
+    libmtkshim_atomic \
+    libshim_camera
 
 # Manifest
 PRODUCT_COPY_FILES += \
@@ -118,6 +118,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
+# Ported Camera Blobs: Force include ALL files from vendor folders
+PRODUCT_COPY_FILES += \
+    $(foreach f,$(shell find vendor/htc/htc_v36bml_dugl/vendor/lib -maxdepth 1 -name "*.so"),$(f):$(TARGET_COPY_OUT_VENDOR)/lib/$(notdir $(f))) \
+    $(foreach f,$(shell find vendor/htc/htc_v36bml_dugl/vendor/lib64 -maxdepth 1 -name "*.so"),$(f):$(TARGET_COPY_OUT_VENDOR)/lib64/$(notdir $(f))) \
+    $(foreach f,$(shell find vendor/htc/htc_v36bml_dugl/vendor/lib/hw -name "*.so"),$(f):$(TARGET_COPY_OUT_VENDOR)/lib/hw/$(notdir $(f))) \
+    $(foreach f,$(shell find vendor/htc/htc_v36bml_dugl/vendor/lib64/hw -name "*.so"),$(f):$(TARGET_COPY_OUT_VENDOR)/lib64/hw/$(notdir $(f)))
+PRODUCT_COPY_FILES += \
+    vendor/htc/htc_v36bml_dugl/vendor/lib/libstlport.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstlport.so \
+    vendor/htc/htc_v36bml_dugl/vendor/lib64/libstlport.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstlport.so
 
 # Sensors
 PRODUCT_PACKAGES += \

@@ -217,20 +217,37 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libcam.jni.lomohaljni.so|libmtkshim_camera.so \
     /system/vendor/lib64/libcam.jni.lomohaljni.so|libmtkshim_camera.so \
     /system/vendor/lib/libmtkcam_imgbuf.so|libmtkshim_camera.so \
+    /system/vendor/lib64/libmtkcam_imgbuf.so|libmtkshim_camera.so \TARGET_LD_SHIM_LIBS := \
+    $(TARGET_LD_SHIM_LIBS) \
+    /system/lib/libcutils.so|libmtkshim_atomic.so \
+    /system/lib64/libcutils.so|libmtkshim_atomic.so \
+    /system/lib/liblog.so|libhtcxlog_shim.so \
+    /system/lib64/liblog.so|libhtcxlog_shim.so \
+    /system/vendor/lib/hw/audio.primary.mt6735.so|libmtkshim_audio.so \
+    /system/vendor/lib64/hw/audio.primary.mt6735.so|libmtkshim_audio.so \
+    /system/vendor/lib/hw/audio.primary.mt6753.so|libmtkshim_audio.so \
+    /system/vendor/lib64/hw/audio.primary.mt6753.so|libmtkshim_audio.so \
+    /system/lib/libui.so|libmtkshim_ui.so \
+    /system/lib64/libui.so|libmtkshim_ui.so \
+    /system/lib/libgui.so|libmtkshim_gui.so \
+    /system/lib64/libgui.so|libmtkshim_gui.so \
+    /system/vendor/lib/libfeatureio.so|libmtkshim_camera.so \
+    /system/vendor/lib64/libfeatureio.so|libmtkshim_camera.so \
+    /system/vendor/lib/libcam.camnode.so|libmtkshim_camera.so \
+    /system/vendor/lib64/libcam.camnode.so|libmtkshim_camera.so \
+    /system/vendor/lib/libcam.hal3a.v3.so|libmtkshim_camera.so \
+    /system/vendor/lib64/libcam.hal3a.v3.so|libmtkshim_camera.so \
+    /system/vendor/lib/libcam.jni.lomohaljni.so|libmtkshim_camera.so \
+    /system/vendor/lib64/libcam.jni.lomohaljni.so|libmtkshim_camera.so \
+    /system/vendor/lib/libmtkcam_imgbuf.so|libmtkshim_camera.so \
     /system/vendor/lib64/libmtkcam_imgbuf.so|libmtkshim_camera.so \
     /system/vendor/lib/libmtk_mmutils.so|libshim_camera.so \
     /system/vendor/lib64/libmtk_mmutils.so|libshim_camera.so \
-    /system/vendor/lib/libmmsdkservice.feature.so|libshim_camera.so \
-    /system/vendor/lib64/libmmsdkservice.feature.so|libshim_camera.so \
-    /system/vendor/lib/libcam.iopipe.so|libshim_camera.so \
-    /system/vendor/lib64/libcam.iopipe.so|libshim_camera.so \
-    /system/vendor/lib/libcam.iopipe.so|libshim_camera.so \
-    /system/vendor/lib/libJpgEncPipe.so|libshim_camera.so \
-    /system/vendor/lib/libJpgEncPipe.so|libshim_camera.so \
-    /system/vendor/lib64/libJpgEncPipe.so|libshim_camera.so \
-    /system/vendor/lib/libcam.halsensor.so|libshim_camera.so \
-    /system/vendor/lib/hw/camera.mt6753.so|libshim_camera.so \
-    /system/vendor/lib/libcam.halsensor.so|libshim_camera.so
+    /system/vendor/lib/libmtk_mmutils.so|libshim_camera.so \
+
+#    /system/vendor/lib/hw/audio.primary.$(TARGET_BOARD_PLATFORM).so|libmtkshim_audio.so \
+#    /system/vendor/lib64/hw/audio.primary.$(TARGET_BOARD_PLATFORM).so|libmtkshim_audio.so \
+
 # RIL
 TARGET_RIL_VARIANT := ../../../hardware/htc/htc_v36bml_dugl/ril
 TARGET_RILUTILS_VARIANT := ../../../hardware/ril/librilutils

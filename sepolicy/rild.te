@@ -1,0 +1,4 @@
+allow rild ccci_device:chr_file rw_file_perms;
+allow rild devpts:chr_file rw_file_perms;
+set_prop(rild, ctl_muxreport-daemon_prop)
+set_prop(rild, ril_mux_report_case_prop)
